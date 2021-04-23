@@ -1,4 +1,4 @@
 export interface Crisis {
-    id: number;
-    name: string;
+  id: number;
+  name: string;
 }
