@@ -1,4 +1,4 @@
-<h2>HEROES</h2>
+<h3>HEROES</h3>
 <ul class="heroes">
 	<li *ngFor="let hero of heroes$ | async"
 			[class.selected]="hero.id === selectedId">
@@ -7,5 +7,3 @@
 		</a>
 	</li>
 </ul>
-
-<button routerLink="/sidekicks">Go to sidekicks</button>
