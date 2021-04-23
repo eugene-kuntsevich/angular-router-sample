@@ -14,14 +14,10 @@ export class CrisisDetailComponent implements OnInit {
   crisis: Crisis;
   editName: string;
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    public dialogService: DialogService,
-  ) {
+  constructor(private route: ActivatedRoute, private router: Router, public dialogService: DialogService) {
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.route.data
       .subscribe((data: { crisis: Crisis }) => {
         this.editName = data.crisis.name;
@@ -29,11 +25,11 @@ export class CrisisDetailComponent implements OnInit {
       });
   }
 
-  cancel() {
+  cancel(): void {
     this.gotoCrises();
   }
 
-  save() {
+  save(): void {
     this.crisis.name = this.editName;
     this.gotoCrises();
   }
@@ -48,7 +44,7 @@ export class CrisisDetailComponent implements OnInit {
     return this.dialogService.confirm('Discard changes?');
   }
 
-  gotoCrises() {
+  gotoCrises(): void {
     const crisisId = this.crisis ? this.crisis.id : null;
     // Pass along the crisis id if available
     // so that the CrisisListComponent can select that crisis.
